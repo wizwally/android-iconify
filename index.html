@@ -28,23 +28,23 @@
         </ul>
       </header>
       <section>
-        <p><img src="https://raw.github.com/JoanZapata/android-iconify/master/screenshot.png" alt="Alt"></p>
+        <p><img src="https://raw.github.com/JoanZapata/android-iconify/master/header.png" alt="Alt"></p>
 
-<p><strong>Iconify</strong> is a single JAR, you can download it <a href="http://search.maven.org/remotecontent?filepath=com/joanzapata/android/android-iconify/1.0.0/android-iconify-1.0.0.jar">here</a>, it's also available on <strong>Maven Central</strong>:</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.joanzapata.android.icons.sample"><img src="http://developer.android.com/images/brand/en_app_rgb_wo_45.png" alt="Alt"></a></p>
 
-<div class="highlight"><pre><span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>com.joanzapata.android<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>android-iconify<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</pre></div>
+<blockquote>
+<p><strong>Iconify</strong> makes it easy to include any of the <strong><a href="http://fortawesome.github.io/Font-Awesome/icons">361 FontAwesome icons</a></strong> in a native Android application. </p>
+
+<p>If you're not familiar with it, <code>FontAwesome</code> is a <strong>font</strong> in which some special characters draw vectorial icons instead of letters. That means you can <strong>scale them as much as you want</strong>, and you can <strong>apply text transforms</strong> on these icons, just like you would do with texts. These icons will <strong>never ever become fuzzy</strong>.</p>
+</blockquote>
 
 <h2>
-<a name="programmatically" class="anchor" href="#programmatically"><span class="octicon octicon-link"></span></a>Programmatically</h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h2>
 
-<div class="highlight"><pre><span class="nt">&lt;TextView</span>
-    <span class="na">android:id=</span><span class="s">"@+id/iconTextView"</span>
-    <span class="na">android:text=</span><span class="s">"Iconify this {icon_star} !"</span>
+<p>Wrap icon names with <code>{ }</code> where you want the icon to appear in the text.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;IconTextView</span>
+    <span class="na">android:text=</span><span class="s">"FontAwesome {icon_flag} in Android {icon_android} !"</span>
     <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
     <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
 </pre></div>
@@ -53,35 +53,57 @@
 <p>You can use any icon from <a href="http://fortawesome.github.io/Font-Awesome/icons/">FontAwesome 3.2.0</a></p>
 </blockquote>
 
-<div class="highlight"><pre><span class="n">Iconify</span><span class="o">.</span><span class="na">addIcons</span><span class="o">(</span><span class="n">iconTextView</span><span class="o">);</span>
-</pre></div>
+<h1>
+<a name="transforms" class="anchor" href="#transforms"><span class="octicon octicon-link"></span></a>Transforms</h1>
 
-<blockquote>
-<p>Syntax is inspired from <a href="http://developer.android.com/reference/android/text/util/Linkify.html">Linkify</a>.</p>
-</blockquote>
-
-<p><img src="https://raw.github.com/JoanZapata/android-iconify/master/iconify-this.png" alt="Alt"></p>
-
-<h2>
-<a name="from-xml" class="anchor" href="#from-xml"><span class="octicon octicon-link"></span></a>From XML</h2>
+<p>The good thing is that you can <strong>scale</strong> and apply <strong>shadows</strong> and <strong>colors</strong> to the icon, like any text.</p>
 
 <div class="highlight"><pre><span class="nt">&lt;IconTextView</span>
-    <span class="na">android:id=</span><span class="s">"@+id/icon"</span>
-    <span class="na">android:text=</span><span class="s">"Iconify this {icon_star} !"</span>
-    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
+    <span class="na">android:text=</span><span class="s">"{icon_android} !"</span>
+    <span class="na">android:shadowColor=</span><span class="s">"#22000000"</span>
+    <span class="na">android:shadowDx=</span><span class="s">"3"</span>
+    <span class="na">android:shadowDy=</span><span class="s">"3"</span>
+    <span class="na">android:shadowRadius=</span><span class="s">"1"</span>
+    <span class="na">android:textSize=</span><span class="s">"90dp"</span>
+    <span class="na">android:textColor=</span><span class="s">"#FF33B5E5"</span>
+    <span class="err">...</span> <span class="nt">/&gt;</span>
 </pre></div>
 
-<p>It works the same way for anything that extends TextView, so you can put icons in your buttons too.</p>
+<p><img src="https://raw.github.com/JoanZapata/android-iconify/master/androids.png" alt="Alt"></p>
+
+<h2>
+<a name="buttons" class="anchor" href="#buttons"><span class="octicon octicon-link"></span></a>Buttons</h2>
+
+<p>It plays nice with buttons, just use <code>IconButton</code> instead of <code>Button</code>.</p>
 
 <div class="highlight"><pre><span class="nt">&lt;IconButton</span>
-    <span class="na">android:id=</span><span class="s">"@+id/icon"</span>
-    <span class="na">android:text=</span><span class="s">"{icon_edit} Edit"</span>
-    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
+    <span class="na">android:text=</span><span class="s">"{icon_retweet} Retweet"</span>
+    <span class="err">...</span> <span class="nt">/&gt;</span>
 </pre></div>
 
-<p><img src="https://raw.github.com/JoanZapata/android-iconify/master/edit.png" alt="Alt"></p>
+<p><img src="https://raw.github.com/JoanZapata/android-iconify/master/buttons.png" alt="Alt"></p>
+
+<h2>
+<a name="other-views" class="anchor" href="#other-views"><span class="octicon octicon-link"></span></a>Other views</h2>
+
+<p>Any <code>View</code> that extends <code>TextView</code> can be iconified programmatically.</p>
+
+<div class="highlight"><pre><span class="n">TextView</span> <span class="n">myTextView</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">myTextView</span><span class="o">);</span>
+<span class="n">Iconify</span><span class="o">.</span><span class="na">addIcons</span><span class="o">(</span><span class="n">myTextView</span><span class="o">);</span>
+</pre></div>
+
+<h2>
+<a name="download-jar" class="anchor" href="#download-jar"><span class="octicon octicon-link"></span></a><a href="http://search.maven.org/remotecontent?filepath=com/joanzapata/android/android-iconify/1.0.0/android-iconify-1.0.0.jar">Download JAR</a>
+</h2>
+
+<p>Or via <strong>Maven Central</strong></p>
+
+<div class="highlight"><pre><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.joanzapata.android<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>android-iconify<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
 
 <h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
