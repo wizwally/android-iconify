@@ -35,7 +35,7 @@
 <p><a href="https://play.google.com/store/apps/details?id=com.joanzapata.android.icons.sample"><img src="http://developer.android.com/images/brand/en_app_rgb_wo_45.png" alt="Alt"></a></p>
 
 <blockquote>
-<p><strong><a href="http://fortawesome.github.io/Font-Awesome/icons">All available icons (361)</a></strong></p>
+<p><strong><a href="http://fortawesome.github.io/Font-Awesome/icons">All available icons (370)</a></strong></p>
 </blockquote>
 
 <p><strong>If, like me, you're tired of copying 5 images (ldpi, mdpi, hdpi, xhdpi, xxhdpi) for each icon you want to use in your app, for each color you want to use them with, and bang your head on the wall when you suddently need to change their color or size, then I think <code>Iconify</code> can help you.</strong></p>
@@ -43,15 +43,15 @@
 <hr><h3>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h3>
 
-<p><strong>Iconify</strong> allows you to include any of the <strong><a href="http://fortawesome.github.io/Font-Awesome/icons">361 FontAwesome icons by Dave Gandy</a></strong> in your texts, your <code>ActionBar</code>, and even in your <code>EditText</code>s. Icons are infinitely <strong>scalable</strong>, and <strong>customizable</strong> with shadows and everything you can do on texts.</p>
+<p><strong>Iconify</strong> allows you to include any of the <strong><a href="http://fortawesome.github.io/Font-Awesome/icons">370 FontAwesome icons by Dave Gandy</a></strong> in your texts, your <code>ActionBar</code>, and even in your <code>EditText</code>s. Icons are infinitely <strong>scalable</strong>, and <strong>customizable</strong> with shadows and everything you can do on texts.</p>
 
 <h3>
 <a name="get-started-1" class="anchor" href="#get-started-1"><span class="octicon octicon-link"></span></a>Get started #1</h3>
 
 <p>If you need icons on a <code>TextView</code>, use the <code>{ }</code> syntax. You can put any text around it and have more than one icon in the text. Note that the shadows apply to the icons as well.</p>
 
-<div class="highlight"><pre><span class="nt">&lt;IconTextView</span>
-    <span class="na">android:text=</span><span class="s">"{icon-android}"</span>
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;IconTextView</span>
+    <span class="na">android:text=</span><span class="s">"{fa-android}"</span>
     <span class="na">android:shadowColor=</span><span class="s">"#22000000"</span>
     <span class="na">android:shadowDx=</span><span class="s">"3"</span>
     <span class="na">android:shadowDy=</span><span class="s">"3"</span>
@@ -72,9 +72,9 @@
 
 <p>If you need an icon in an <code>ImageView</code> or in your <code>ActionBar</code>, then you should use <code>IconDrawable</code>. Again, icons are infinitely scalable and will never get fuzzy!</p>
 
-<div class="highlight"><pre><span class="c1">// Set an icon in the ActionBar</span>
+<div class="highlight highlight-java"><pre><span class="c1">// Set an icon in the ActionBar</span>
 <span class="n">menu</span><span class="o">.</span><span class="na">findItem</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">share</span><span class="o">).</span><span class="na">setIcon</span><span class="o">(</span>
-   <span class="k">new</span> <span class="nf">IconDrawable</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">IconValue</span><span class="o">.</span><span class="na">icon_share_alt</span><span class="o">)</span>
+   <span class="k">new</span> <span class="nf">IconDrawable</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">IconValue</span><span class="o">.</span><span class="na">fa_share</span><span class="o">)</span>
    <span class="o">.</span><span class="na">colorRes</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">ab_icon</span><span class="o">)</span>
    <span class="o">.</span><span class="na">actionBarSize</span><span class="o">());</span>
 </pre></div>
@@ -82,12 +82,12 @@
 <hr><h2>
 <a name="get-it" class="anchor" href="#get-it"><span class="octicon octicon-link"></span></a>Get it</h2>
 
-<p><a href="http://search.maven.org/remotecontent?filepath=com/joanzapata/android/android-iconify/1.0.2/android-iconify-1.0.2.jar">Download JAR</a> or via <strong>Maven Central</strong></p>
+<p><a href="http://search.maven.org/remotecontent?filepath=com/joanzapata/android/android-iconify/1.0.3/android-iconify-1.0.3.jar">Download JAR</a> or via <strong>Maven Central</strong></p>
 
-<div class="highlight"><pre><span class="nt">&lt;dependency&gt;</span>
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.joanzapata.android<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>android-iconify<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>1.0.2<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.3<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 
