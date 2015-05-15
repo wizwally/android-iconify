@@ -57,6 +57,8 @@ public class IconDrawable extends Drawable {
     private int size = -1;
 
     private int alpha = 255;
+    
+    private int verticalOffset = 0;
 
     /**
      * Create an IconDrawable.
@@ -145,6 +147,17 @@ public class IconDrawable extends Drawable {
         invalidateSelf();
         return this;
     }
+    
+    /**
+     * Set the icon vertical offset inside the drawable.
+     * Positive value shifts down the icon, negative one shifts up.
+     * @param offset The padding in density-independent pixels (dp).
+     * @return The current IconDrawable for chaining.
+     */
+    public IconDrawable iconVertOffset(int offset) {
+        this.verticalOffset = offset;
+        return this;
+    }
 
     @Override
     public int getIntrinsicHeight() {
@@ -158,12 +171,13 @@ public class IconDrawable extends Drawable {
 
     @Override
     public void draw(Canvas canvas) {
-        paint.setTextSize(getBounds().height());
+        paint.setTextSize((this.size == -1) ? getBounds().height() : this.size);
         Rect textBounds = new Rect();
         String textValue = valueOf(icon.character);
         paint.getTextBounds(textValue, 0, 1, textBounds);
-        float textBottom = (getBounds().height() - textBounds.height()) / 2f + textBounds.height() - textBounds.bottom;
-        canvas.drawText(textValue, getBounds().width() / 2f, textBottom, paint);
+        float xOrigin = getBounds().left + (getBounds().width() / 2f);
+        float yOrigin = getBounds().top + (getBounds().height() / 2f) + (textBounds.height() / 2f) + verticalOffset;
+        canvas.drawText(textValue, xOrigin , yOrigin, paint);
     }
 
     @Override
